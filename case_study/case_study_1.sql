@@ -1,3 +1,5 @@
+drop database if exists castydy_furama;
+
 create database castydy_furama;
 
 use castydy_furama;
@@ -106,7 +108,6 @@ CREATE TABLE hop_dong_chi_tiet (
     so_luong INT,
     PRIMARY KEY (ma_hop_dong_chi_tiet)
 );
-
 
 CREATE TABLE kieu_thue (
     ma_kieu_thue INT,

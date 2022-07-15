@@ -49,25 +49,29 @@ CREATE TABLE nha_cung_cap (
     dia_chi VARCHAR(55)
 );
 
-create table so_dien_thoai (
-so_dien_thoai varchar(55) primary key,
-so_dien_thoai_ncc int ,
-foreign key (so_dien_thoai_ncc) references nha_cung_cap(ma_nha_cung_cap)
+CREATE TABLE so_dien_thoai (
+    so_dien_thoai VARCHAR(55) PRIMARY KEY,
+    so_dien_thoai_ncc INT ,
+    FOREIGN KEY (so_dien_thoai_ncc) 
+        REFERENCES nha_cung_cap(ma_nha_cung_cap)
 );
 
-create table don_dat_hang(
-so_don_hang int primary key ,
-ngay_dat_hang date,
-ma_nha_cung_cap int ,
-foreign key (ma_nha_cung_cap) references nha_cung_cap(ma_nha_cung_cap)
+CREATE TABLE don_dat_hang(
+    so_don_hang INT PRIMARY KEY ,
+    ngay_dat_hang DATE,
+    ma_nha_cung_cap INT ,
+    FOREIGN KEY (ma_nha_cung_cap) 
+         REFERENCES nha_cung_cap(ma_nha_cung_cap)
 );
 
-create table chi_tiet_don_dat_hang(
-so_don_hang int ,
-ma_vat_tu int ,
-primary key (so_don_hang,ma_vat_tu),
-foreign key  (so_don_hang) references don_dat_hang(so_don_hang),
-foreign key (ma_vat_tu) references vat_tu(ma_vat_tu)
+CREATE TABLE chi_tiet_don_dat_hang(
+    so_don_hang INT ,
+    ma_vat_tu INT ,
+    PRIMARY KEY (so_don_hang,ma_vat_tu),
+    FOREIGN KEY  (so_don_hang) 
+        REFERENCES don_dat_hang(so_don_hang),
+    FOREIGN KEY (ma_vat_tu) 
+        REFERENCES vat_tu(ma_vat_tu)
 );
 
 

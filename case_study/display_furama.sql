@@ -110,9 +110,10 @@ FROM
     dich_vu dv
         JOIN
     loai_dich_vu ldv ON dv.ma_loai_dich_vu = ldv.ma_loai_dich_vu
- join hop_dong hd on dv.ma_dich_vu = hd.ma_dich_vu
- where 
- YEAR(ngay_lam_hop_dong) = 2020
+        JOIN
+    hop_dong hd ON dv.ma_dich_vu = hd.ma_dich_vu
+WHERE
+    YEAR(ngay_lam_hop_dong) = 2020
         AND hd.ma_dich_vu NOT IN (SELECT 
             ma_dich_vu
         FROM

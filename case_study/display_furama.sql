@@ -134,6 +134,8 @@ FROM
     khach_hang;
     
     
+    
+    
   
 --   9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 
@@ -162,4 +164,66 @@ FROM
         LEFT JOIN
     dich_vu_di_kem ON dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
 GROUP BY ma_hop_dong;
+
+-- 11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là 
+-- “Diamond” và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
+
+SELECT 
+    dvdk.ma_dich_vu_di_kem, ten_dich_vu_di_kem
+FROM
+    khach_hang kh
+        JOIN
+    loai_khach lkh ON kh.ma_loai_khach = lkh.ma_loai_khach
+        JOIN
+    hop_dong hd ON hd.ma_khach_hang = kh.ma_khach_hang
+        JOIN
+    hop_dong_chi_tiet hdct ON hd.ma_hop_dong = hdct.ma_hop_dong
+        JOIN
+    dich_vu_di_kem dvdk ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+WHERE
+    ten_loai_khach = 'Diamond'
+        AND (kh.dia_chi like '%vinh'
+        OR kh.dia_chi like '%Quảng Ngãi');
+        
+        
+        
+ -- 12.	Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng),
+ -- ten_dich_vu, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của
+ --  tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2020 nhưng chưa từng được khách hàng đặt
+ -- vào 6 tháng đầu năm 2021.
+SELECT 
+    hop_dong.ma_hop_dong,
+    nhan_vien.ho_ten AS ho_ten_nhan_vien,
+    khach_hang.ho_ten AS ho_ten_khach_hang,
+    khach_hang.so_dien_thoai,
+    dich_vu.ma_dich_vu,
+    dich_vu.ten_dich_vu,
+    SUM(so_luong) AS so_luong_dich_vu_di_kem,
+    tien_dat_coc
+FROM
+    khach_hang
+        INNER JOIN
+    hop_dong ON khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+        JOIN
+    dich_vu ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
+        LEFT JOIN
+    hop_dong_chi_tiet ON hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+        JOIN
+    nhan_vien ON hop_dong.ma_nhan_vien = nhan_vien.ma_nhan_vien
+WHERE
+    YEAR(ngay_lam_hop_dong) = 2020
+        AND QUARTER(ngay_lam_hop_dong) = 4
+        AND hop_dong.ma_dich_vu NOT IN (SELECT 
+            hop_dong.ma_dich_vu
+        FROM
+            hop_dong
+        WHERE
+            YEAR(ngay_lam_hop_dong) = 2021
+                AND (QUARTER(ngay_lam_hop_dong) = 1
+                OR QUARTER(ngay_lam_hop_dong) = 2))
+GROUP BY khach_hang.ma_khach_hang;
+
+ 
+ 
+ 
 

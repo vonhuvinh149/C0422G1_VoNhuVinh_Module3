@@ -90,59 +90,22 @@ FROM
     JOIN dich_vu ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
     WHERE
         (MONTH(ngay_lam_hop_dong) IN (1 , 2, 3)
-            AND YEAR(ngay_lam_hop_dong) = 2021)) AS table1
-    RIGHT JOIN dich_vu ON table1.ten_dich_vu = dich_vu.ten_dich_vu
+            AND YEAR(ngay_lam_hop_dong) = 2021)) AS tb1
+    RIGHT JOIN dich_vu ON tb1.ten_dich_vu = dich_vu.ten_dich_vu
         JOIN
     loai_dich_vu ON dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
 WHERE
-    table1.ten_dich_vu IS NULL;
+    tb1.ten_dich_vu IS NULL;
 
 -- 7.	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021
-SELECT 
-    table1.ma_dich_vu,
-    table1.ten_dich_vu,
-    table1.dien_tich,
-    table1.so_nguoi_toi_da,
-    table1.chi_phi_thue,
-    table1.ten_loai_dich_vu
-FROM
-    (SELECT 
-        ten_dich_vu,
-            hop_dong.ma_dich_vu,
-            ngay_lam_hop_dong,
-            dich_vu.dien_tich,
-            dich_vu.chi_phi_thue,
-            dich_vu.so_nguoi_toi_da,
-            loai_dich_vu.ten_loai_dich_vu AS ten_loai_dich_vu
-    FROM
-        hop_dong
-    JOIN dich_vu ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
-    JOIN loai_dich_vu ON dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
-    WHERE
-        YEAR(ngay_lam_hop_dong) = 2020
-    GROUP BY ten_dich_vu) AS table1
-        LEFT JOIN
-    (SELECT 
-        ten_dich_vu,
-            hop_dong.ma_dich_vu,
-            ngay_lam_hop_dong,
-            dich_vu.dien_tich,
-            dich_vu.chi_phi_thue,
-            dich_vu.so_nguoi_toi_da,
-            loai_dich_vu.ten_loai_dich_vu AS ten_loai_dich_vu
-    FROM
-        hop_dong
-    JOIN dich_vu ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
-    JOIN loai_dich_vu ON dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
-    WHERE
-        YEAR(ngay_lam_hop_dong) = 2021
-    GROUP BY ten_dich_vu) AS table2 ON table1.ten_dich_vu = table2.ten_dich_vu
-WHERE
-    table2.ten_dich_vu IS NULL;
+
+
+
+
     
   --   8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
   
-  
+
    SELECT DISTINCT
     ho_ten
 FROM

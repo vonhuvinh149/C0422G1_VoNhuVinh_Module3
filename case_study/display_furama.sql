@@ -304,7 +304,46 @@ WHERE
         
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
         
-
+set sql_safe_updates = 0;
+DELETE FROM nhan_vien 
+WHERE
+    ma_nhan_vien NOT IN (SELECT 
+        temp.ma_nhan_vien
+    FROM
+        (SELECT 
+            nhan_vien.ma_nhan_vien
+        FROM
+            hop_dong
+        LEFT JOIN nhan_vien ON nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
+        
+        WHERE
+            YEAR(ngay_lam_hop_dong) IN (2019,2020,2021)
+        GROUP BY ma_nhan_vien)  as temp);
+    set sql_safe_updates =1;
+SELECT 
+    *
+FROM
+    nhan_vien;
+    
+    -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng)
+    
+ set sql_safe_updates = 0;
+ set foreign_key_checks =0;
+DELETE FROM khach_hang 
+WHERE
+    ma_khach_hang IN (SELECT 
+        ma_khach_hang
+    FROM
+        hop_dong
+    WHERE
+        YEAR(ngay_lam_hop_dong) < 2021);
+  set foreign_key_checks =1;
+  set sql_safe_updates = 1;
+SELECT 
+    *
+FROM
+    khach_hang;
+    
 
 
 

@@ -58,12 +58,11 @@ WHERE
  */
  
 SELECT 
-    o.o_ID, o.o_date, odQTY * p_price AS o_total_price
+    o.o_id, o.o_date, SUM(od.od_qty * p.p_price) AS total_price
 FROM
     `order` o
         JOIN
-    order_detail od ON o.o_ID = od.o_ID
+    order_detail od ON o.o_id = od.o_id
         JOIN
-    product p ON p.p_ID = od.p_ID
-WHERE
-    odQTY * p_price IS NOT NULL
+    product p ON p.p_id = od.o_id
+GROUP BY o.o_id;

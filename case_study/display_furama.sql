@@ -292,6 +292,9 @@ WHERE
             YEAR(hd.ngay_lam_hop_dong) BETWEEN 2020 AND 2021
         GROUP BY ma_nhan_vien
         HAVING COUNT(ma_nhan_vien) < 4);
+        
+-- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
+        
 
 
 

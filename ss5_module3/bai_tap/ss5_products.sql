@@ -1,6 +1,6 @@
-drop database if exists ss5_products ;
+DROP DATABASE IF EXISTS ss5_products ;
 
-create database ss5_products;
+CREATE DATABASE ss5_products;
 
 use ss5_products ;
 
@@ -33,18 +33,18 @@ VALUES (4,"banh keo" ,10000,50,"ngon","chat luong"),
 
 -- Tạo Unique Index trên bảng Products (sử dụng cột productCode để tạo chỉ mục)
 
-create unique index idx_products on products(productCode) ;
+CREATE UNIQUE INDEX idx_products ON products(productCode) ;
 
 -- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
 
-create index idx_full_products on products(productPrice,productcode) ;
+CREATE INDEX idx_full_products ON products(productPrice,productcode) ;
 
 
 ALTER TABLE products DROP INDEX idx_products;
 
 -- Sử dụng câu lệnh EXPLAIN để biết được câu lệnh SQL của bạn thực thi như nào
 
-explain select * from products where productcode = 0 ;
+EXPLAIN SELECT * FROM products WHERE productcode = 0 ;
 
 -- bước 4 -----------------------------------------------------------------------------------------
 

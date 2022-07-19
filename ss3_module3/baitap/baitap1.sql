@@ -4,7 +4,9 @@ use QuanLySinhVien;
 SELECT 
     *
 FROM
-    student thị danh sách học viên đang theo học
+    student ;
+    
+   -- hiển thị thị danh sách học viên đang theo học
 SELECT 
     *
 FROM
@@ -79,13 +81,13 @@ SET sql_safe_updates = 1;
 
 -- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần.
 -- nếu trùng sắp theo tên tăng dần.
+
 SELECT 
-    s.student_name, sj.sub_name, m.mark
+    s.student_ID, s.Student_Name, AVG(Mark)
 FROM
     student s
         JOIN
-    mark m ON s.student_id = m.student_id
-        JOIN
-    `subject` sj ON m.sub_id = sj.sub_id
-ORDER BY m.mark DESC , s.student_name;
+    mark m ON s.Student_Id = m.Student_Id
+GROUP BY Student_Id
+ORDER BY AVG(mark) DESC; 
 

@@ -312,7 +312,7 @@ WHERE
         HAVING COUNT(ma_nhan_vien) < 4);
         
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
-        
+
 set sql_safe_updates = 0;
 DELETE FROM nhan_vien 
 WHERE
@@ -333,9 +333,9 @@ SELECT
 FROM
     nhan_vien;
     
- -- 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với
- -- Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
-    
+ -- 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond,chỉ cập nhật những khách hàng đã từng đặt phòng với
+ -- Tổng Tiền thanh toán trong năm 2021 là lớn hơn 1.000.000 VNĐ.
+ 
 SET sql_safe_updates =0;
 UPDATE khach_hang 
 SET 
@@ -356,7 +356,7 @@ WHERE
             LEFT JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
                 AND YEAR(ngay_lam_hop_dong) = 2021
             GROUP BY kh.ma_khach_hang
-            HAVING SUM(chi_phi_thue + IFNULL(so_luong * gia, 0)) > 1000000) temp);
+            HAVING SUM(chi_phi_thue + IFNULL(so_luong * gia, 0)) > 1000000) as temp);
  SET sql_safe_updates =1;
 
     -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng)

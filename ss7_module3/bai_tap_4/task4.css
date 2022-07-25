@@ -1,139 +1,280 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 740px ) {
+    .col-s-1 {
+        width: 8.33333%;
+    }
+
+    .col-s-2 {
+        width: 16.66667%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33333%;
+    }
+
+    .col-s-5 {
+        width: 41.66667%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33333%;
+    }
+
+    .col-s-8 {
+        width: 66.66667%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33333%;
+    }
+
+    .col-s-11 {
+        width: 91.66667%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+/*Màn hinh laptop và máy tính bảng*/
+@media only screen and (min-width: 741px)and (max-width: 1240px) {
+    .col-m-1 {
+        width: 8.33333%;
+    }
+
+    .col-m-2 {
+        width: 16.66667%;
+    }
+
+    .col-m-3 {
+        width: 25%;
+    }
+
+    .col-m-4 {
+        width: 33.33333%;
+    }
+
+    .col-m-5 {
+        width: 41.66667%;
+    }
+
+    .col-m-6 {
+        width: 50%;
+    }
+
+    .col-m-7 {
+        width: 58.33333%;
+    }
+
+    .col-m-8 {
+        width: 66.66667%;
+    }
+
+    .col-m-9 {
+        width: 75%;
+    }
+
+    .col-m-10 {
+        width: 83.33333%;
+    }
+
+    .col-m-11 {
+        width: 91.66667%;
+    }
+
+    .col-m-12 {
+        width: 100%;
+    }
+}
+
+/*Màn hình máy tính pc và tivi smart*/
+@media only screen and (min-width: 1241px) {
+    .col-l-1 {
+        width: 8.33333%;
+    }
+
+    .col-l-2 {
+        width: 16.66667%;
+    }
+
+    .col-l-3 {
+        width: 25%;
+    }
+
+    .col-l-4 {
+        width: 33.33333%;
+    }
+
+    .col-l-5 {
+        width: 41.66667%;
+    }
+
+    .col-l-6 {
+        width: 50%;
+    }
+
+    .col-l-7 {
+        width: 58.33333%;
+    }
+
+    .col-l-8 {
+        width: 66.66667%;
+    }
+
+    .col-l-9 {
+        width: 75%;
+    }
+
+    .col-l-10 {
+        width: 83.33333%;
+    }
+
+    .col-l-11 {
+        width: 91.66667%;
+    }
+
+    .col-l-12 {
+        width: 100%;
+    }
+}
+
+.row {
+    /* dùng cho thẻ div trong 1 row sẽ nổi lên*/
+    display: flex;
+    /*Nếu như không đủ độ rộng thì nó sẽ rớt xuống*/
+    flex-wrap: wrap;
+}
+
+
+.footer {
+    width: 100%;
+    height: 40px;
+    background: darkgray;
+}
+
+#anh_bia {
+    height: 60px;
+    line-height: 60px;
+}
+
+#anh_bia #fixed {
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 1px 1px 2px #666666;
 
 }
-@media only screen {
-    body {
-        font-family: Arial, serif;
-        color: cadetblue;
-    }
 
-    #anh_bia {
-        height: 100px;
-        width: 100%;
-        line-height: 100px;
+#anh_bia img {
+    margin-left: 50px;
 
-    }
+    height: 70px;
+    width: 70px;
+    float: left;
+    padding-right: 50px;
+}
 
-    #anh_bia #fixed {
-        width: 100%;
-        background: white;
-        position: fixed;
-        z-index: 3;
-        box-shadow: 1px 1px 2px #666666;
-    }
+#menu {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 1px 1px 3px #E6E6E6;
+}
 
-    #anh_bia img {
-        margin-left: 50px;
-        padding-top: 10px;
-        height: 80px;
-        width: 80px;
-        float: left;
-        padding-right: 50px;
-    }
+#menu .max {
+    list-style-type: none;
+    background: #E6E6E6;
+    text-align: center;
+}
 
-    #menu {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 70px;
-        position: relative;
-        z-index: 1;
-        box-shadow: 1px 1px 3px #E6E6E6;
-    }
+#menu .max li {
+    display: inline-table;
+    width: 120px;
+    position: relative;
+}
 
-    #menu .max {
-        height: 70px;
-        line-height: 70px;
-        list-style-type: none;
-        background: #E6E6E6;
-        text-align: center;
-    }
+#menu .max li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
 
-    #menu .max li {
-        display: inline-table;
-        width: 120px;
-        position: relative;
-    }
+#menu .max li a:hover {
+    background: white;
+    color: brown;
+}
 
-    #menu .max li a {
-        color: black;
-        text-decoration: none;
-        display: block;
-    }
+#menu .max li > .sub {
+    display: none;
+    position: absolute;
+}
 
-    #menu .max li a:hover {
-        background: white;
-        color: brown;
-    }
+#menu .max li:hover .sub {
+    display: block;
+    background: #E6E6E6;
+}
 
-    #menu .max li > .sub {
-        display: none;
-        position: absolute;
-    }
+.video2 {
+    margin: 20px auto;
+    height: 100%;
+    width: 90%;
+    display: grid;
+    /*grid-template-columns: 1fr;*/
+    grid-template-rows: 200px 200px 200px 200px;
+    grid-gap: 25px 25px;
+    z-index: 1;
+    overflow: scroll visible;
+}
 
-    #menu .max li:hover .sub {
-        display: block;
-        background: #E6E6E6;
-    }
-    .container {
-        margin: 20px auto;
-        height: 100%;
-        width: 90%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 200px 200px 200px 200px;
-        grid-gap: 25px 25px;
-        z-index: 1;
-    }
-    .container iframe {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    .container .video1:first-child {
-        grid-column: 2/4;
-        grid-row: 1/3;
-    }
-
-    .container .video1:nth-child(2) {
-        grid-row: 1/5;
-        grid-column: 1/2;
-    }
-
-    .video2 {
-        margin: 20px auto;
-        height: 100%;
-        width: 90%;
-        display: grid;
-        /*grid-template-columns: 1fr;*/
-        grid-template-rows: 200px 200px 200px 200px;
-        grid-gap: 25px 25px;
-        z-index: 1;
-        overflow: scroll visible;
-    }
-
-    .video2 .sub-video iframe {
-        height: 80%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    #footer {
-        width: 100%;
-        height: 40px;
-        color: white;
-        font-weight: lighter;
-        letter-spacing: 2px;
-        background: #E6E6E6;
-        line-height: 40px;
-        text-align: center;
-    }
+.video2 .sub-video iframe {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.video1 {
+    margin: 20px;
+    text-align: center;
+}
+.video1 iframe{
+    width: 90%;
+    height: 500px;
+}
+.video1 p{
+    text-align: left;
+    padding-left: 52px;
 
 }
+
+
+
+
+
+
+
+
+

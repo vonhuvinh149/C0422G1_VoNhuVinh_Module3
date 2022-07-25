@@ -1,25 +1,62 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-.row{
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.row {
     display: flex;
     flex-wrap: wrap;
 }
+
 #menu .max {
     height: 60px;
     line-height: 60px;
@@ -54,6 +91,7 @@
     display: block;
     background: #E6E6E6;
 }
+
 body {
     font-family: Arial, serif;
     color: cadetblue;
@@ -83,35 +121,38 @@ body {
     padding-right: 50px;
 }
 
-.header{
+.header {
     height: 60px;
     background-color: #f1f4f5
 }
-.header h2{
+
+.header h2 {
     margin-left: 20px;
 }
-.nav{
+
+.nav {
     height: 50px;
     background-color: #f1f4f5;
     margin-top: 5px;
 }
-.main{
+
+.main {
     height: 500px;
     width: 100%;
     margin-top: 10px;
 }
 
-.left{
+.left {
     height: 500px;
     background-color: #f1f4f5
 }
 
-.right{
+.right {
     height: 500px;
     background-color: #f1f4f5
 }
 
-.box-one,.box-two,.box-three{
+.box-one, .box-two, .box-three {
     margin: 0 auto;
     height: 100px;
     background-color: #c8d1dd;
@@ -120,21 +161,23 @@ body {
     margin-bottom: -17px;
 }
 
-.left-top{
-    height: 250px;
-    background-color: #f1f4f5
-}
-.left-bottom{
+.left-top {
     height: 250px;
     background-color: #f1f4f5
 }
 
-.footer{
+.left-bottom {
+    height: 250px;
+    background-color: #f1f4f5
+}
+
+.footer {
     height: 50px;
     background-color: #f1f4f5
 }
+
 body {
-    font-family: Verdana,sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 0.9em;
 }
 

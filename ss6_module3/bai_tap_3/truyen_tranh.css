@@ -14,13 +14,16 @@
     text-decoration: none;
     font-size: 27px;
 }
+
 #content {
     padding: 20px;
     text-align: center;
 }
-#content ul{
+
+#content ul {
     list-style-type: none;
 }
-h1 , h5{
+
+h1, h5 {
     color: brown;
 }

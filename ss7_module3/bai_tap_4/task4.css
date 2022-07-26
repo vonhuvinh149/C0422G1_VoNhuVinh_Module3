@@ -163,11 +163,12 @@
     flex-wrap: wrap;
 }
 
-
 .footer {
     width: 100%;
     height: 40px;
+    line-height: 40px;
     background: darkgray;
+    text-align: center;
 }
 
 #anh_bia {
@@ -243,7 +244,6 @@
     width: 90%;
     display: grid;
     /*grid-template-columns: 1fr;*/
-    grid-template-rows: 200px 200px 200px 200px;
     grid-gap: 25px 25px;
     z-index: 1;
     overflow: scroll visible;
@@ -256,18 +256,20 @@
     border-radius: 5px;
     overflow: hidden;
 }
+
 .video1 {
     margin: 20px;
     text-align: center;
 }
-.video1 iframe{
+
+.video1 iframe {
     width: 90%;
     height: 500px;
 }
-.video1 p{
+
+.video1 p {
     text-align: left;
     padding-left: 52px;
-
 }
 
 

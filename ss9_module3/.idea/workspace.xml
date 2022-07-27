@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3afcebde-2512-4dc2-b160-052874fc6592" name="Changes" comment="" />
+    <list default="true" id="3afcebde-2512-4dc2-b160-052874fc6592" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/build/classes/java/main/task1Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/build/libs/task_1-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/src/main/java/task1Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/src/main/webapp/DiscountServlet.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_1/src/main/webapp/index.jsp" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bai_tap" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658907125209</updated>
       <workItem from="1658907126856" duration="41000" />
+      <workItem from="1658936151245" duration="34000" />
     </task>
     <servers />
   </component>

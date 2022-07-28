@@ -4,7 +4,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "index", value = "/task1")
-public class task1Servlet extends HttpServlet {
+public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -17,7 +17,7 @@ public class task1Servlet extends HttpServlet {
         int discountPercent = Integer.parseInt(request.getParameter("Discount Percent"));
         double discountAmount = listPrice * discountPercent * 0.01;
         double productAfterDiscount = listPrice - discountAmount;
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("productDiscountServlet.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("product.jsp");
         request.setAttribute("displayProductDescription", productDescription);
         request.setAttribute("displayListPrice", listPrice);
         request.setAttribute("displayDiscountPercent", discountPercent);

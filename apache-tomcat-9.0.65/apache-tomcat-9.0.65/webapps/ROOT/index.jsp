@@ -11,18 +11,20 @@
     <title>$Title$</title>
 </head>
 <body>
+<div style="width: 300px ;height: 200px ; margin: auto ;text-align: center;border: 1px solid #666666">
 <form action="/CalculatorServlet" method="post">
-    <span>First-Operand</span>
-    <input type="number" name="first-operand"><br>
+    <p><span>First-Operand</span>
+    <input type="number" name="first-operand"></p>
     <select name="operator">
         <option value="+">Addition</option>
         <option value="-">Subtraction</option>
         <option value="*">Multiplication</option>
         <option value="/">Division</option>
     </select><br>
-    <span>Second operand</span>
-    <input type="number" name="second-operand">
+    <p><span>Second operand</span>
+    <input type="number" name="second-operand"></p>
     <button type="submit">Result</button>
 </form>
+</div>
 </body>
 </html>

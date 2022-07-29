@@ -1,6 +1,6 @@
-package model;
+package service;
 
-public class Calculator {
+public class CalculatorService {
     public static double calculator(double firstOperand, double secondOperand, String operator) {
         switch (operator) {
             case "+":

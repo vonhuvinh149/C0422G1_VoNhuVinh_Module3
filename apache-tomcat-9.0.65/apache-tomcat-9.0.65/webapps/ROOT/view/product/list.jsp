@@ -15,6 +15,10 @@
 </head>
 <body>
 <div>
+    <form action="/ProductServlet?action=search" method="post">
+        <input type="text" placeholder="Tìm kiếm sản phẩm theo tên" name="name">
+        <button type="submit">tìm Kiếm</button>
+    </form><br>
     <h1>Danh sách sản phẩm</h1>
     <br>
     <table border="1" >
@@ -42,6 +46,7 @@
     <p>
     <a href="/ProductServlet?action=add" style="margin-top: 30px">Thêm mới sản phẩm</a>
     </p>
+
 </div>
 </body>
 </html>

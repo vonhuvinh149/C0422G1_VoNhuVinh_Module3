@@ -1,8 +1,8 @@
 package controller;
 
 import model.Product;
-import service.impl.IProductService;
-import service.impl.impl.ProductService;
+import service.IProductService;
+import service.impl.ProductService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,10 +33,14 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 showDeleteProduct(request, response);
                 break;
+            case "view":
+                showViewProduct(request, response);
+                break;
             default:
                 showListProduct(request, response);
         }
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,7 +48,6 @@ public class ProductServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
-
         switch (action) {
             case "add":
                 addProduct(request, response);
@@ -55,7 +58,46 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 deleteProduct(request, response);
                 break;
+            case "search":
+                searchProduct(request, response);
+                break;
             default:
+        }
+    }
+
+
+    private void showViewProduct(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = productService.findById(id);
+        request.setAttribute("product", product);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/product/view.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    // Search-----------------------------------------------------------------------------------------
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<Product> productList = productService.searchByName(name);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/product/search.jsp");
+        if (productList.isEmpty()) {
+            request.setAttribute("message", "Không tìm thấy");
+        } else {
+            request.setAttribute("productList", productList);
+        }
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -98,7 +140,7 @@ public class ProductServlet extends HttpServlet {
         Product product = new Product(id, name, price, description, producer);
         productService.add(product);
         request.setAttribute("message", "thêm mới thành công");
-        showListProduct(request,response);
+        showListProduct(request, response);
 
 
     }

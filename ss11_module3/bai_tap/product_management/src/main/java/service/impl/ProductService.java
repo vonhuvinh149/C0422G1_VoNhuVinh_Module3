@@ -1,9 +1,9 @@
-package service.impl.impl;
+package service.impl;
 
 import model.Product;
-import service.impl.IProductService;
-import servicerepository.impl.IRepositoryService;
-import servicerepository.impl.impl.RepositoryService;
+import service.IProductService;
+import servicerepository.IRepositoryService;
+import servicerepository.impl.RepositoryService;
 
 import java.util.List;
 
@@ -40,5 +40,10 @@ public class ProductService implements IProductService {
     @Override
     public Product productDetail(int id) {
         return null;
+    }
+
+    @Override
+    public List<Product> searchByName(String name) {
+        return repositoryService.searchByName(name);
     }
 }

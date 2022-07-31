@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,23 +12,24 @@ body{
     background: lightgreen;
 }
 
-div{
+div {
     text-align: center;
     position: relative;
 }
 
-h1{
+h1 {
     color: red;
     font-weight: bold;
 }
 
-tr th{
+tr th {
     color: red;
     height: 50px;
     width: 200px;
     font-weight: bolder;
     border: 2px solid white;
 }
+
 div table tr td {
     color: black;
     text-align: center;
@@ -40,7 +41,7 @@ div table tr td {
 
 td a {
     text-decoration: none;
-    background:black;
+    background: black;
     position: relative;
     font-weight: 500;
     font-size: 18px;
@@ -48,11 +49,11 @@ td a {
     color: white;
     padding: 3px 40px;
     letter-spacing: 2px;
-    border:3px solid white;
+    border: 3px solid white;
     clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
 
-td a:hover{
+td a:hover {
     background: white;
     letter-spacing: 4px;
     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
@@ -60,13 +61,13 @@ td a:hover{
     border: 3px solid black;
 }
 
-p a{
+p a {
     position: relative;
     width: 250px;
-    height :40px;
+    height: 40px;
     background: limegreen;
-    padding:15px 40px;
-    text-decoration: none ;
+    padding: 15px 40px;
+    text-decoration: none;
     letter-spacing: 2px;
     font-weight: bold;
     transition: 0.5s;
@@ -74,9 +75,9 @@ p a{
     border: 1px solid white;
 }
 
- p a:hover{
+p a:hover {
     background: green;
     letter-spacing: 4px;
-     border: 2px solid white;
-     box-shadow: 0 0 35px white;
+    border: 2px solid white;
+    box-shadow: 0 0 35px white;
 }

@@ -1,7 +1,7 @@
-package servicerepository.impl.impl;
+package servicerepository.impl;
 
 import model.Product;
-import servicerepository.impl.IRepositoryService;
+import servicerepository.IRepositoryService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,8 +16,8 @@ public class RepositoryService implements IRepositoryService {
         mapProduct.put(2,new Product(2,"XE DAP", 1200000000, "NGON","VIETNAM"));
         mapProduct.put(3,new Product(3,"XE OTO", 130000000, "NGON","VIETNAM"));
         mapProduct.put(4,new Product(4,"XE TAI", 1050000000, "NGON","VIETNAM"));
-        mapProduct.put(5,new Product(5,"XE LĂN", 1030300300, "NGON","VIETNAM"));
-        mapProduct.put(6,new Product(6,"XE NGỰA", 13030000, "NGON","VIETNAM"));
+        mapProduct.put(5,new Product(5,"XE BUS", 1030300300, "NGON","VIETNAM"));
+        mapProduct.put(6,new Product(6,"XE NGUA", 13030000, "NGON","VIETNAM"));
 
     }
     @Override
@@ -48,5 +48,16 @@ public class RepositoryService implements IRepositoryService {
     @Override
     public Product productDetail(int id) {
         return null;
+    }
+
+    @Override
+    public List<Product> searchByName(String name) {
+        List<Product>productList = new ArrayList<>(mapProduct.values());
+        for (int i = productList.size()-1; i >=0; i--) {
+            if (!(productList.get(i).getName().contains(name))){
+                productList.remove(i);
+            }
+        }
+        return productList;
     }
 }

@@ -24,6 +24,6 @@
 </form>
 <c:if test="${message != null}">
     <p>${message}</p>
-</c:if>l
+</c:if>
 </body>
 </html>

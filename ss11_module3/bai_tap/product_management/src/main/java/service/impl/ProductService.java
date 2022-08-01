@@ -22,7 +22,6 @@ public class ProductService implements IProductService {
 
     @Override
     public Product findById(int id) {
-
         return repositoryService.findById(id);
     }
 

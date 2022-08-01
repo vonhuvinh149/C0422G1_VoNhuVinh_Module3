@@ -184,7 +184,6 @@ FROM
     dich_vu_di_kem ON dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
 GROUP BY ma_hop_dong;
 
-
 -- 11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là 
 -- “Diamond” và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
 
@@ -359,7 +358,7 @@ WHERE
             HAVING SUM(chi_phi_thue + IFNULL(so_luong * gia, 0)) > 1000000) as temp);
  SET sql_safe_updates =1;
 
-    -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng)
+-- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng)
     
 SET sql_safe_updates = 0;
 SET foreign_key_checks =0;
@@ -369,15 +368,10 @@ WHERE
         ma_khach_hang
     FROM
         hop_dong
-    
     WHERE
         YEAR(ngay_lam_hop_dong) < 2021);
 SET foreign_key_checks =1;
 SET sql_safe_updates = 1;
-SELECT 
-    *
-FROM
-    khach_hang;
     
     -- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
     

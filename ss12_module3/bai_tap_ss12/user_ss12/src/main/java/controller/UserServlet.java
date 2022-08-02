@@ -20,7 +20,6 @@ import java.util.List;
 public class UserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private IUser userService = new UserService();
-    ;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -91,8 +90,8 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    // sap xep theo ten ---------------------------------------------------------------------------------
-
+//    // sap xep theo ten ---------------------------------------------------------------------------------
+//
     private void selectSortName(HttpServletRequest request, HttpServletResponse response) {
         List<User> userList = userService.selectAllUsers();
         ComparatorName comparator = new ComparatorName();
@@ -124,7 +123,7 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/list.jsp");
         dispatcher.forward(request, response);
     }
-
+//
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");

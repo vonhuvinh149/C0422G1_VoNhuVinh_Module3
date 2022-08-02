@@ -1,7 +1,7 @@
-package servicerepository.impl;
+package repository.impl;
 
 import model.Product;
-import servicerepository.IRepositoryService;
+import repository.IRepositoryService;
 
 import java.util.ArrayList;
 import java.util.HashMap;

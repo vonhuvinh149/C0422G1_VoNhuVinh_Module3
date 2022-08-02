@@ -119,7 +119,6 @@ public class UserRepositoryService implements IUserRepository {
             preparedStatement.setString(1, country);
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
-
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
@@ -131,8 +130,7 @@ public class UserRepositoryService implements IUserRepository {
         }
         return users;
     }
-//
-//
+
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {

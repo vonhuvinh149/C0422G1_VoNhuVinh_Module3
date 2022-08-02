@@ -1,4 +1,4 @@
-package servicerepository;
+package repository;
 
 import model.Product;
 

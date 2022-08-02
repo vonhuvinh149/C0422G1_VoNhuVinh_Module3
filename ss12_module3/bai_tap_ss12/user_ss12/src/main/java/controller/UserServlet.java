@@ -23,6 +23,8 @@ public class UserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -52,6 +54,8 @@ public class UserServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -90,8 +94,8 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-//    // sap xep theo ten ---------------------------------------------------------------------------------
-//
+  // sap xep theo ten ---------------------------------------------------------------------------------
+
     private void selectSortName(HttpServletRequest request, HttpServletResponse response) {
         List<User> userList = userService.selectAllUsers();
         ComparatorName comparator = new ComparatorName();
@@ -123,7 +127,7 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/list.jsp");
         dispatcher.forward(request, response);
     }
-//
+
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");

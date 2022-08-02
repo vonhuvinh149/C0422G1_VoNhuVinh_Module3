@@ -2,8 +2,8 @@ package service.impl;
 
 import model.Product;
 import service.IProductService;
-import servicerepository.IRepositoryService;
-import servicerepository.impl.RepositoryService;
+import repository.IRepositoryService;
+import repository.impl.RepositoryService;
 
 import java.util.List;
 

@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>User Management Application</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <center>
@@ -29,7 +29,7 @@
     <button onclick="location.href='/users?action=selectSortName';">sap xep</button>
 </div>
 <div align="center">
-    <table  class="table table-striped">
+    <table class="table table-striped">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -45,36 +45,39 @@
                 <td><c:out value="${user.country}"/></td>
                 <td>
                     <a href="/users?action=edit&id=${user.id}">Edit</a>
-                </td>
-                <td>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-${user.id}">
-                       delete
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal-${user.id}">
+                        delete
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal-${user.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal-${user.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    bạn có muốn xoá ko
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <a class="btn btn-primary" href="/users?action=delete&id=${user.id}">Delete</a>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">không</button>
+                                    <a class="btn btn-primary" href="/users?action=delete&id=${user.id} ">có</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </td>
+                <!-- Button trigger modal -->
+
+
             </tr>
         </c:forEach>
     </table>
 </div>
-<script src="webapp/js/bootstrap.min.js"></script>
+<script src="/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 package service.impl;
 
-import RepositoryService.IUserRepository;
-import RepositoryService.impl.UserRepositoryService;
+import repository.IRepository;
+import repository.impl.RepositoryService;
 import model.User;
 import service.IUser;
 
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserService implements IUser {
-    private IUserRepository userRepository = new UserRepositoryService();
+    private IRepository userRepository = new RepositoryService();
 
     @Override
     public void insertUser(User user) throws SQLException {

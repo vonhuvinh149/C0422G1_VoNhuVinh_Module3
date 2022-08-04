@@ -20,14 +20,14 @@ create table User_Permision(
 	user_id int(11)                            
 );
 
-insert into users(name, email, country) values('Minh','minh@codegym.vn','Viet Nam');
-insert into users(name, email, country) values('Kante','kante@che.uk','Kenia');
-insert into users(name, email, country) values('Tuấn','dsds@codegym.vn','Viet Nam');
-insert into users(name, email, country) values('An','rettre@che.uk','Lào');
-insert into users(name, email, country) values('Ronando','bvbfdfd@codegym.vn','Campuchia');
-insert into users(name, email, country) values('Thức','rtrtdf@che.uk','Kenia');
-insert into users(name, email, country) values('Trung','mjhgh@codegym.vn','Pháp');
-insert into users(name, email, country) values('Messi','ưewds@che.uk','Pháp');
+insert into users(name, email, country) values('vinh1','vonhuvinh1@gmail.com','Viet Nam');
+insert into users(name, email, country) values('vinh2','vonhuvinh2@gmail.com','japan');
+insert into users(name, email, country) values('vinh3','vonhuvinh3@gmail.com','korea');
+insert into users(name, email, country) values('vinh4','vonhuvinh4@gmail.com','Viet Nam');
+insert into users(name, email, country) values('vinh5','vonhuvinh5@gmail.com','myanma');
+insert into users(name, email, country) values('vinh6','vonhuvinh6@gmail.com','anh');
+
+
 
 insert into Permision(id, name) values(1, 'add');
 insert into Permision(id, name) values(2, 'edit');

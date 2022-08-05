@@ -16,31 +16,34 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="https://phuongviethcm.com/wp-content/uploads/2019/07/FURAMA.png" alt="" width="30" height="24">
+            <img src="https://phuongviethcm.com/wp-content/uploads/2019/07/FURAMA.png" alt="" width="50"
+                 height="50">
         </a>
+        <span>Võ như vinh</span>
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top "
+     style="opacity: .8;font-weight: bold;font-size: 27px">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <a class="navbar-brand text-black-500" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Employee</a>
+                    <a class="nav-link active text-black-500" aria-current="page" href="furama/employee.jsp">Employee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Customer</a>
+                    <a class="nav-link active text-black-500" href="#">Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Service</a>
+                    <a class="nav-link active text-black-500" href="furama/service.jsp">Service</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contract</a>
+                    <a class="nav-link active text-black-500 " href="#" tabindex="-1">Contract</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -50,28 +53,134 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container-fluid ">
     <div class="row">
-        <div class="col-2">
-            Column
+        <img class="position-relative w-100"
+             src="https://thodiavn24h.com/wp-content/uploads/2020/05/home-furama-resort-danang.jpg"
+             alt="responsive image">
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 m-5 ">
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://images.vietnamtourism.gov.vn/vn/images/Furama12.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Võ Như Vinh</small>
+                </div>
+            </div>
         </div>
-        <div class="col-8">
-
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://images.vietnamtourism.gov.vn/vn/images/Furama12.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Võ Như Vinh</small>
+                </div>
+            </div>
         </div>
-        <div class="col-2">
-            Column
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://images.vietnamtourism.gov.vn/vn/images/Furama12.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal
+                        height
+                        action.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Võ Như Vinh</small>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 </div>
-<footer class="bg-light text-center text-lg-start">
+<footer class="text-center text-white" style="background-color: #caced1;">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!-- Section: Images -->
+        <section class="">
+            <div class="row">
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                         data-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp"
+                             class="w-100"/>
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" class="w-100"/>
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                         data-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp"
+                             class="w-100"/>
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" class="w-100"/>
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" class="w-100"/>
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp"
+                             class="w-100"/>
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Images -->
+    </div>
+    <!-- Grid container -->
+
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2020 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>
     <!-- Copyright -->
 </footer>
 </body>
-<script src="bootstrap.min.js"></script>
+<script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 </html>

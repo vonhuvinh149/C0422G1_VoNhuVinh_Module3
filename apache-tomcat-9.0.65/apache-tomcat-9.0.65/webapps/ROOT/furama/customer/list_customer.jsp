@@ -67,7 +67,7 @@
 <div class="container text-center shadow-sm p-3 bg-body rounded">
     <div class="">
         <div class="row">
-            <h1>Danh sách nhân viên</h1>
+            <h1>Danh sách Khách hàng</h1>
         </div>
         <div class="row">
             <%--        bảng nhân viên --%>

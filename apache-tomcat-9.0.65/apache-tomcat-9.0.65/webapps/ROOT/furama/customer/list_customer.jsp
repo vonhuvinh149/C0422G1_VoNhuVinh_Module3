@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -74,162 +75,41 @@
             <table class="table table-hover shadow-sm p-3 mt-5 bg-body rounded" id="table" style="width:100%;">
                 <tr class="bg-primary">
                     <th>ID</th>
+                    <td>TypeId</td>
                     <th>Name</th>
                     <th>Birthday</th>
                     <th>Gender</th>
                     <th>Id Card</th>
                     <th>Phone</th>
                     <th>Email</th>
-                    <th>Customer Type Id</th>
                     <th>Ardress</th>
-                    <th colspan="3">Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
-                <tr>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>d</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td><a href="#create">add</a></td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            sửa
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
-                            xoá
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>d</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td><a href="#create">add</a></td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            sửa
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
-                            xoá
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>d</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td><a href="#create">add</a></td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            sửa
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
-                            xoá
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>d</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td><a href="#create">add</a></td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            sửa
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
-                            xoá
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>d</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td><a href="#create">add</a></td>
-
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            sửa
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
-                            xoá
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>d</td>
-                    <td>d</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td><a href="#create">add</a></td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            sửa
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
-                            xoá
-                        </button>
-                    </td>
-                </tr>
-
+                <c:forEach var="customer" items="${customerList}">
+                    <tr>
+                        <td>${customer.customerId}</td>
+                        <td>${customer.customerTypeId}</td>
+                        <td>${customer.customerName}</td>
+                        <td>${customer.customerBirth}</td>
+                        <td>${customer.customerGender}</td>
+                        <td>${customer.customerIdCard}</td>
+                        <td>${customer.customerPhone}</td>
+                        <td>${customer.customerEmail}</td>
+                        <td>${customer.customerAddress}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                sửa
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1">
+                                xoá
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
             </table>
         </div>
         <!-- Button trigger modal -->
@@ -286,6 +166,7 @@
         </div>
     </div>
 </div>
+<a href="/customer?action=create">thêm mới khách hàng</a>
 <footer class="text-center text-white" style="background-color: #caced1;">
     <!-- Grid container -->
     <div class="container p-4">
@@ -360,6 +241,15 @@
     </div>
     <!-- Copyright -->
 </footer>
+<script>
+    function setIdToFormDelete(idCustomer) {
+        document.getElementById("idStudentInput").value = idStudent;
+    }
+
+    function submitFormDelete() {
+        document.getElementById("formDelete").submit();
+    }
+</script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

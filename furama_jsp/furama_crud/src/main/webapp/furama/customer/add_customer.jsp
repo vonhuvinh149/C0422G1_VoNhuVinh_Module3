@@ -11,36 +11,29 @@
     <title>Title</title>
 </head>
 <body>
+
 <div class="row mt-5 d-flex justify-content-center " id="create">
     <div class="border border-dark p-5 w-75 shadow-sm p-3 mt-3 bg-body rounded overflow-hidden">
         <h3>Thêm mới nhân viên</h3>
-        <form action="" method="post" >
+        <form action="/customer" method="post">
             <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerTypeId"/></p>
             <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerName"/></p>
             <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerBirth"/></p>
             <p>Thêm:
-                <input type="date"/></p>
+                <input type="text" name="customerGender"/></p>
             <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerIdCard"/></p>
             <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerPhone"/></p>
             <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerEmail"/></p>
             <p>Thêm:
-                <input type="text"/></p>
-            <p>Thêm:
-                <input type="text"/></p>
-            <p>Thêm:
-                <input type="text"/></p>
-            <p>Thêm:
-                <input type="text"/></p>
-            <p>Thêm:
-                <input type="text"/></p>
+                <input type="text" name="customerAddress"/></p>
             <p>
-                <button type="submit" ><a href="#table"> thê mới</a></button>
+                <button type="submit" name="action" value="create">thêm mới</button>
             </p>
         </form>
     </div>

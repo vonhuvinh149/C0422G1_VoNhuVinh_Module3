@@ -35,10 +35,10 @@
                     <a class="nav-link active text-black-500" aria-current="page" href="furama/employee/list_employee.jsp">Employee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-black-500" href="furama/customer/list_customer.jsp">Customer</a>
+                    <a class="nav-link active text-black-500" href="customer?action=default">Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-black-500" href="furama/service/list_service.jsp">Service</a>
+                    <a class="nav-link active text-black-500" href="">Service</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active text-black-500 " href="furama/contract/list_contract.jsp" tabindex="-1">Contract</a>

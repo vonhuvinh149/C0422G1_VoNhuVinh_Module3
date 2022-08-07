@@ -1,6 +1,5 @@
 package model.customer;
 
-import java.util.Date;
 
 public class Customer {
     private int customerId;

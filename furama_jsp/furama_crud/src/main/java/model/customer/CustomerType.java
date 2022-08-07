@@ -3,7 +3,6 @@ package model.customer;
 public class CustomerType {
     private int customerTypeId;
     private String customerTypeName;
-
     public CustomerType() {
     }
 

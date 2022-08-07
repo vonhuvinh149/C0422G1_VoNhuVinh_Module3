@@ -1,6 +1,7 @@
 package service;
 
 import model.customer.Customer;
+import model.customer.CustomerType;
 
 import java.util.List;
 
@@ -9,5 +10,6 @@ public interface IService {
     void addCustomer(Customer customer);
     void deleteCustomer(int id);
     void updateCustomer(Customer customer);
-    List<Customer> findByName(String name);
+   Customer findById(int id);
+    List<CustomerType> showCustomerType();
 }

@@ -24,12 +24,16 @@
 </head>
 <body>
 <%@include file="/furama/include/header.jsp" %>
-
-
-<div class="container text-center shadow-sm p-3 bg-body rounded">
+<div class="container text-center shadow-sm mt-3 p-3 bg-body rounded">
     <div class="">
         <div class="row">
             <h1>Danh sách Khách hàng</h1>
+        </div>
+        <div class="row mt-3">
+            <form action="/customer?action=search" method="post">
+                <input type="search" name="name" placeholder="tim kiem theo ten">
+                <button type="submit">Search</button>
+            </form>
         </div>
         <div class="row">
             <%--        bảng nhân viên --%>
@@ -53,7 +57,7 @@
                         <td>${customer.customerName}</td>
                         <td>${customer.customerBirth}</td>
                         <c:if test="${customer.customerGender}">
-                        <td>Nam</td>
+                            <td>Nam</td>
                         </c:if>
                         <c:if test="${!customer.customerGender}">
                             <td>Nữ</td>
@@ -63,30 +67,50 @@
                         <td>${customer.customerEmail}</td>
                         <td>${customer.customerAddress}</td>
                         <td>
-                            <a href="">update</a>
+                            <a class="btn btn-primary" href="/customer?action=update&customerId=${customer.customerId}">update</a>
                         </td>
                         <td>
-                            <a href="/customer?action=delete&customerId=${customer.customerId}">delete</a>
+                            <button type="button" onclick="deleteCustomer(${customer.customerId})"
+                                    class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                delete
+                            </button>
                         </td>
                     </tr>
                 </c:forEach>
             </table>
         </div>
-        <!-- Button trigger modal -->
-        <!-- Modal -->
-        <%--        sửa ---------------------------------------------------------------------------------------------------------%>
-
-        <%--        xoá----------------------------------------------                        --%>
-        <!-- Button trigger modal -->
+    </div>
+    <!-- Button trigger modal -->
 
 
-        <!-- Modal -->
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    bạn có muốn xoá ko
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="button" id="confirm" class="btn btn-primary"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/customer?action=create" class="btn btn-success">thêm mới khách hàng</a>
 </div>
-<a href="/customer?action=create">thêm mới khách hàng</a>
 <%@include file="/furama/include/footer.jsp" %>
-</body>
+<script>
+    function deleteCustomer(id) {
+        document.getElementById("confirm").innerHTML = '<a class="text-white text-decoration-none" href="/customer?action=delete&customerId=' + id + '">co</a>'
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+</body>
 </html>

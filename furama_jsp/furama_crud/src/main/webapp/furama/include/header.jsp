@@ -20,10 +20,10 @@
         <span>Võ như vinh</span>
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top "
+<nav class="navbar navbar-expand-lg navbar-white text-white bg-success sticky-top "
      style="font-weight: bold;font-size: 27px">
     <div class="container-fluid">
-        <a class="navbar-brand text-black-500" href="furama/index.jsp">Home</a>
+        <a class="navbar-brand text-black-500" href="http://localhost:8080/">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +35,10 @@
                     <a class="nav-link active text-black-500" aria-current="page" href="furama/employee/list_employee.jsp">Employee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-black-500" href="customer?action=default">Customer</a>
+                    <a class="nav-link active text-black-500" href="/customer">Customer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active text-black-500" href="">Service</a>
+                    <a class="nav-link active text-black-500" href="/facility?action">Service</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active text-black-500 " href="furama/contract/list_contract.jsp" tabindex="-1">Contract</a>

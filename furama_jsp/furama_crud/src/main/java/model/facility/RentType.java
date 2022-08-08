@@ -3,15 +3,14 @@ package model.facility;
 public class RentType {
     private int rentTypeId;
     private String rentTypeName;
-    private double rentTypeCost;
-
     public RentType() {
+
     }
 
-    public RentType(int rentTypeId, String rentTypeName, double rentTypeCost) {
+    public RentType(int rentTypeId, String rentTypeName) {
         this.rentTypeId = rentTypeId;
         this.rentTypeName = rentTypeName;
-        this.rentTypeCost = rentTypeCost;
+
     }
 
     public int getRentTypeId() {
@@ -30,11 +29,5 @@ public class RentType {
         this.rentTypeName = rentTypeName;
     }
 
-    public double getRentTypeCost() {
-        return rentTypeCost;
-    }
 
-    public void setRentTypeCost(double rentTypeCost) {
-        this.rentTypeCost = rentTypeCost;
-    }
 }

@@ -13,7 +13,7 @@
 <body>
 <footer class="text-center text-white" style="background-color: #caced1;">
     <!-- Grid container -->
-    <div class="container p-4">
+    <div class="container p-4 mt-3">
         <!-- Section: Images -->
         <section class="">
             <div class="row">

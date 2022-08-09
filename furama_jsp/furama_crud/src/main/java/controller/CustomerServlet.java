@@ -40,6 +40,27 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                addCustomer(request, response);
+                break;
+            case "update":
+                updateCustomer(request, response);
+                break;
+            case "search":
+                showSearch(request,response);
+                break;
+        }
+    }
+
     private void showSearch(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         List<Customer> customerList = service.searchByName(name);
@@ -98,26 +119,7 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html; charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                addCustomer(request, response);
-                break;
-                case "update":
-                updateCustomer(request, response);
-                break;
-            case "search":
-                showSearch(request,response);
-                break;
-        }
-    }
+
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));

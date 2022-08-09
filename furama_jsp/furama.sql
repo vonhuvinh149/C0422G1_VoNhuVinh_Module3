@@ -7,7 +7,7 @@ use furama;
 CREATE TABLE nhan_vien (
     ma_nhan_vien INT PRIMARY KEY AUTO_INCREMENT,
     ho_ten VARCHAR(45) NOT NULL,
-    ngay_sinh DATE NOT NULL,
+    ngay_sinh date NOT NULL,
     so_cmnd VARCHAR(45) NOT NULL,
     luong DOUBLE NOT NULL,
     so_dien_thoai VARCHAR(45) NOT NULL,
@@ -31,11 +31,11 @@ CREATE TABLE bo_phan (
     ten_bo_phan VARCHAR(45)
 );
 CREATE TABLE khach_hang (
-    ma_khach_hang INT NOT NULL,
-    PRIMARY KEY (ma_khach_hang),
+    ma_khach_hang INT AUTO_INCREMENT,
+    PRIMARY KEY (ma_khach_hang) ,
     ma_loai_khach INT NOT NULL,
     ho_ten VARCHAR(45) NOT NULL,
-    ngay_sinh DATE NOT NULL,
+    ngay_sinh VARCHAR(45) NOT NULL,
     gioi_tinh BIT(1) NOT NULL,
     so_cmnd VARCHAR(45) NOT NULL,
     so_dien_thoai VARCHAR(45) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE hop_dong (
     ma_dich_vu INT NOT NULL
 );
 CREATE TABLE dich_vu (
-    ma_dich_vu INT NOT NULL AUTO_INCREMENT,
+    ma_dich_vu INT NOT NULL  ,
     PRIMARY KEY (ma_dich_vu),
     ten_dich_vu VARCHAR(45) NOT NULL,
     dien_tich INT,
@@ -97,17 +97,17 @@ CREATE TABLE hop_dong_chi_tiet (
     so_luong INT NOT NULL
 );
 
-alter table nhan_vien add foreign key (ma_vi_tri) references vi_tri(ma_vi_tri);
-alter table nhan_vien add foreign key (ma_trinh_do) references trinh_do(ma_trinh_do);
-alter table nhan_vien add foreign key (ma_bo_phan) references bo_phan(ma_bo_phan);
-alter table hop_dong add foreign key (ma_nhan_vien) references nhan_vien(ma_nhan_vien);
-alter table hop_dong add foreign key (ma_khach_hang) references khach_hang(ma_khach_hang);
-alter table hop_dong add foreign key (ma_dich_vu) references dich_vu(ma_dich_vu);
-alter table khach_hang add foreign key (ma_loai_khach) references loai_khach(ma_loai_khach);
-alter table dich_vu	add foreign key (ma_kieu_thue) references kieu_thue(ma_kieu_thue);
-alter table dich_vu add foreign key (ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu);
-alter table hop_dong_chi_tiet add foreign key (ma_hop_dong) references hop_dong(ma_hop_dong);
-alter table hop_dong_chi_tiet add foreign key (ma_dich_vu_di_kem) references dich_vu_di_kem(ma_dich_vu_di_kem);
+alter table nhan_vien add foreign key (ma_vi_tri) references vi_tri(ma_vi_tri) on delete cascade;
+alter table nhan_vien add foreign key (ma_trinh_do) references trinh_do(ma_trinh_do) on delete cascade;
+alter table nhan_vien add foreign key (ma_bo_phan) references bo_phan(ma_bo_phan) on delete cascade;
+alter table hop_dong add foreign key (ma_nhan_vien) references nhan_vien(ma_nhan_vien) on delete cascade;
+alter table hop_dong add foreign key (ma_khach_hang) references khach_hang(ma_khach_hang) on delete cascade;
+alter table hop_dong add foreign key (ma_dich_vu) references dich_vu(ma_dich_vu) on delete cascade;
+alter table khach_hang add foreign key (ma_loai_khach) references loai_khach(ma_loai_khach) on delete cascade;
+alter table dich_vu	add foreign key (ma_kieu_thue) references kieu_thue(ma_kieu_thue) on delete cascade;
+alter table dich_vu add foreign key (ma_loai_dich_vu) references loai_dich_vu(ma_loai_dich_vu) on delete cascade;
+alter table hop_dong_chi_tiet add foreign key (ma_hop_dong) references hop_dong(ma_hop_dong) on delete cascade;
+alter table hop_dong_chi_tiet add foreign key (ma_dich_vu_di_kem) references dich_vu_di_kem(ma_dich_vu_di_kem) on delete cascade;
 
 
 
@@ -116,19 +116,16 @@ values ("Quản lý");
 
 insert into vi_tri(ten_vi_tri)
 values ("Nhân viên");
-select * from vi_tri;
-select * from trinh_do;
+
 INSERt into trinh_do (ma_trinh_do, ten_trinh_do) VALuEs ('1', 'Trung Cấp');
 INSErT into trinh_do (ma_trinh_do, ten_trinh_do) VALUEs ('2', 'cao đẳng');
 INSERT iNTo trinh_do (ma_trinh_do, ten_trinh_do) VALUES ('3', 'đại Học');
 INSERT INTO trinh_do (ma_trinh_do, ten_trinh_do) VALUES ('4', 'Sau đại học');
-select * from trinh_do;
-select * from bo_phan;
 insert into bo_phan(ten_bo_phan) values ("Sale-Marketing");
 insert into bo_phan(ten_bo_phan) values ("Hành chính");
 insert into bo_phan(ten_bo_phan) values ("Phục vụ");
 insert into bo_phan(ten_bo_phan) values ("Quản lý");
-select * from bo_phan;
+
 
 INSeRT into nhan_vien (ma_nhan_vien, ho_ten, ngay_sinh, so_cmnd, luong, so_dien_thoai, email, dia_chi, ma_vi_tri, ma_trinh_do, ma_bo_phan) VALUES
  ('1', 'Nguyễn Văn An', '1970-11-07', '456231786', '10000000', '0901234121', 'annguyen@gmail.com', '295 Nguyễn Tất Thành, Đà Nẵng', '1', '3', '1'),
@@ -141,14 +138,12 @@ INSeRT into nhan_vien (ma_nhan_vien, ho_ten, ngay_sinh, so_cmnd, luong, so_dien_
  ('8', 'Nguyễn Hà Đông', '1989-09-03', '234414123', '9000000', '0642123111', 'donghanguyen@gmail.com', '111 Hùng Vương, Hà Nội', '2', '4', '4'),
  ('9', 'Tòng Hoang', '1982-09-03', '256781231', '6000000', '0245144444', 'hoangtong@gmail.com', '213 Hàm Nghi, đà nẵng', '2', '4', '4'),
  ('10', 'Nguyễn công Đạo', '1994-01-08', '755434343', '8000000', '0988767111', 'nguyencongdao12@gmail.com', '6 Hoà khánh, đồng Nai', '2', '3', '2');
-select * from nhan_vien;
-select * from loai_khach;
+
 INSERT INTO loai_khach (ma_loai_khach, ten_loai_khach) vALUEs ('1', 'diamond');
 iNSERT INTO loai_khach (ma_loai_khach, ten_loai_khach) VALuES ('2', 'Platinium');
 INSERT INTo loai_khach (ma_loai_khach, ten_loai_khach) VaLUES ('3', 'Gold');
 INSERT INTO loai_khach (ma_loai_khach, ten_loai_khach) VALUES ('4', 'Silver');
 INSERT INTO loai_khach (ma_loai_khach, ten_loai_khach) VALUeS ('5', 'Member');
-select * from loai_khach;
 InSERT INTO khach_hang (ma_khach_hang, ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi) 
 VaLUES
 ('1', '5', 'Nguyễn Thị Hào', '1970-11-07', 0, '643431213', '0945423362', 'thihao07@gmail.com', '23 Nguyễn Hoàng, Đà Nẵng'),
@@ -162,15 +157,15 @@ VaLUES
 ('9', '1', 'Trần đại Danh', '1994-07-01', 1, '432341235', '0643343433', 'danhhai99@gmail.com', '24 Lý Thường Kiệt, Quảng ngãi'),
 ('10', '2', 'Nguyễn Tâm Đắc', '1989-07-01', 1, '344343432', '0987654321', 'dactam@gmail.com', '22 Ngô quyền, Đà Nẵng');
 
-SELECT * FROM khach_hang;
+
  INSERT INTO kieu_thue(ten_kieu_thue) 
  VALUES ("year"),("month"),("day"),("hour");
  
- sELECt * FROM kieu_thue;
+
  
  insert into loai_dich_vu(ten_loai_dich_vu) 
  values ("Villa"),("House"),("Room");
- select * from loai_dich_vu;
+
 
 INSERT INTO dich_vu (ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, so_nguoi_toi_da, ma_kieu_thue, ma_loai_dich_vu, tieu_chuan_phong, mo_ta_tien_nghi_khac, dien_tich_ho_boi, so_tang, dich_vu_mien_phi_di_kem) 
 VALUES 
@@ -215,4 +210,114 @@ INSERT INTO hop_dong_chi_tiet (ma_hop_dong_chi_tiet, ma_hop_dong, ma_dich_vu_di_
  ('6', '1', '3', 1),
  ('7', '1', '2', 2),
  ('8', '12', '2', 2);
- 
+ -- SET sql_safe_updates = 1;
+
+-- update khach_hang set  ma_loai_khach = 12, ho_ten = "vinh", ngay_sinh=18-08-1998, gioi_tinh = true, so_cmnd = 32132, so_dien_thoai = 123123, email = "dsad@gmail.com", dia_chi = "sdddd";
+-- SET sql_safe_updates = 0;
+
+SELECT 
+    *
+FROM
+    khach_hang;
+
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS deleteCustomer $$
+CREATE PROCEDURE deleteCustomer 
+   (IN ma_khach_hang_xoa INT)
+BEGIN
+   delete from khach_hang where ma_khach_hang = ma_khach_hang_xoa ;
+END $$
+DELIMITER ;
+
+call deleteCustomer(5);
+
+ ma_khach_hang INT AUTO_INCREMENT,
+    PRIMARY KEY (ma_khach_hang) ,
+    ma_loai_khach INT NOT NULL,
+    ho_ten VARCHAR(45) NOT NULL,
+    ngay_sinh VARCHAR(45) NOT NULL,
+    gioi_tinh BIT(1) NOT NULL,
+    so_cmnd VARCHAR(45) NOT NULL,
+    so_dien_thoai VARCHAR(45) NOT NULL,
+    email VARCHAR(45),
+    dia_chi VARCHAR(45)
+
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS update_customer $$
+CREATE PROCEDURE update_customer
+	(in 
+    ma_loai_khach_moi INT,
+    ho_ten_moi varchar(45),
+    ngay_sinh_moi varchar(45),
+    gioi_tinh_moi bit(1),
+    so_cmnd_moi varchar(45),
+    so_dien_thoai_moi VARCHAR(45),
+    email_moi VARCHAR(45),
+    dia_chi_moi VARCHAR(45),
+    ma_khach_hang_cu int)
+BEGIN
+   update  khach_hang
+   set 
+    ma_loai_khach = ma_loai_khach_moi,
+   ho_ten = ho_ten_moi,
+   ngay_sinh = ngay_sinh_moi,
+   gioi_tinh = gioi_tinh_moi,
+   so_cmnd = so_cmnd_moi,
+   so_dien_thoai = so_dien_thoai_moi,
+   email = email_moi,
+   dia_chi = dia_chi_moi
+   where ma_khach_hang = ma_khach_hang_cu;
+END $$
+DELIMITER ;
+-- ------------------------------------------ 
+
+select * from kieu_thue ;
+
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS deleteFacility $$
+CREATE PROCEDURE deleteFacility 
+   (IN ma_dich_vu_xoa INT)
+BEGIN
+   delete from dich_vu where ma_dich_vu = ma_dich_vu_xoa ;
+END $$
+DELIMITER ;
+-- -------------------------------------------
+DELIMITER $$
+DROP PROCEDURE IF EXISTS update_facility $$
+CREATE PROCEDURE update_facility
+	(in 
+    ten_dich_vu_moi VARCHAR(45),
+    dien_tich_moi INT,
+    chi_phi_thue_moi DOUBLE ,
+    so_nguoi_toi_da_moi INT,
+    ma_kieu_thue_moi INT,
+    ma_loai_dich_vu_moi INT,
+    tieu_chuan_phong_moi VARCHAR(45),
+    mo_ta_tien_nghi_khac_moi VARCHAR(45),
+    dien_tich_ho_boi_moi DOUBLE,
+    so_tang_moi INT,
+    dich_vu_mien_phi_di_kem_moi TEXT,
+     ma_dich_vu_cu INT  
+    )
+BEGIN
+   update  dich_vu
+   set 
+    ten_dich_vu = ten_dich_vu_moi,
+    dien_tich =dien_tich_moi,
+    chi_phi_thue = chi_phi_thue_moi,
+    so_nguoi_toi_da =so_nguoi_toi_da_moi,
+    ma_kieu_thue =ma_kieu_thue_moi,
+    ma_loai_dich_vu = ma_loai_dich_vu_moi,
+    tieu_chuan_phong =tieu_chuan_phong_moi,
+    mo_ta_tien_nghi_khac =mo_ta_tien_nghi_khac_moi,
+    dien_tich_ho_boi =dien_tich_ho_boi_moi ,
+    so_tang = so_tang_moi,
+    dich_vu_mien_phi_di_kem = dich_vu_mien_phi_di_kem_moi
+   where ma_dich_vu = ma_dich_vu_cu;
+END $$
+DELIMITER ;
+
+

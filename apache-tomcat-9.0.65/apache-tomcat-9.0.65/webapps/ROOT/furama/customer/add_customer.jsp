@@ -12,7 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-
 <div class="row mt-5 d-flex justify-content-center " id="create">
     <div class="border border-dark p-5 w-75 shadow-sm p-3 mt-3 bg-body rounded overflow-hidden">
         <h3>Thêm mới nhân viên</h3>
@@ -20,7 +19,7 @@
             <table>
                 <tr>
                     <td>Thêm loại khách hàng:</td>
-                    <td><select name="customerTypeId" >
+                    <td><select name="customerTypeId">
                         <c:forEach var="customerType" items="${customerTypeList}">
                             <option value="${customerType.customerTypeId}">${customerType.customerTypeName}</option>
                         </c:forEach>
@@ -67,7 +66,6 @@
             </table>
         </form>
     </div>
-</div>
 </div>
 </body>
 </html>

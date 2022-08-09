@@ -18,10 +18,9 @@ public class FacilityServiceRepository implements IRepositoryFacility {
     private final String SELECT_RENTTYPE = "select * from kieu_thue ;";
     private final String SELECT_FACILITY_TYPE = "select * from loai_dich_vu;";
     private final String DELETE_FACILITY = "call deleteFacility(?);";
-
-
     private final String UPDATE_FACILITY = "call update_facility(?,?,?,?,?,?,?,?,?,?,?,?);";
     private final String FIND_BY_ID_FACILITY = "select * from dich_vu where ma_dich_vu = ?;";
+    private final String FIND_BY_NAME_FACILITY = "select * from dich_vu where ten_dich_vu like" +"?"+";";
 
     @Override
     public List<Facility> findAllFacility() {
@@ -170,5 +169,34 @@ public class FacilityServiceRepository implements IRepositoryFacility {
             e.printStackTrace();
         }
         return facilityTypeList;
+    }
+
+    @Override
+    public List<Facility> searchByName(String name) {
+        List<Facility> facilityList = new ArrayList<>();
+        Connection connection =BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_NAME_FACILITY);
+            preparedStatement.setString(1,"%"+name+"%");
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()){
+                    int facilityId = resultSet.getInt("ma_dich_vu");
+                    String facilityName = resultSet.getString("ten_dich_vu");
+                    int facilityArea = resultSet.getInt("dien_tich");
+                    double facilityPrice = resultSet.getDouble("chi_phi_thue");
+                    int maxPeople = resultSet.getInt("so_nguoi_toi_da");
+                    int rentTypeId = resultSet.getInt("ma_kieu_thue");
+                    int facilityTypeId = resultSet.getInt("ma_loai_dich_vu");
+                    String standardRoom = resultSet.getString("tieu_chuan_phong");
+                    String description = resultSet.getString("mo_ta_tien_nghi_khac");
+                    double poolArea = resultSet.getDouble("dien_tich_ho_boi");
+                    int numberFloors = resultSet.getInt("so_tang");
+                    String facilityFree = resultSet.getString("dich_vu_mien_phi_di_kem");
+                    facilityList.add(new Facility(facilityId, facilityName, facilityArea, facilityPrice, maxPeople, rentTypeId, facilityTypeId, standardRoom, description, poolArea, numberFloors, facilityFree));
+                }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return facilityList;
     }
 }

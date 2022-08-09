@@ -1,0 +1,22 @@
+.codegym{
+    background:linear-gradient(white, lightskyblue, deepskyblue, dodgerblue);
+    opacity: .2;
+}
+
+
+.c0422g1 {
+    background: linear-gradient(white, lightskyblue, deepskyblue, dodgerblue);
+    animation: vinh 2s;
+    z-index: 100;
+}
+
+@keyframes vinh {
+    from {
+        margin-top: -50px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}

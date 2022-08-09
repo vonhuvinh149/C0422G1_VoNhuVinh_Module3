@@ -19,5 +19,5 @@ public interface IRepositoryFacility {
 
     List<RentType> showRentFacility();
     List<FacilityType> showFacilityType();
-
+    List<Facility> searchByName(String name);
 }

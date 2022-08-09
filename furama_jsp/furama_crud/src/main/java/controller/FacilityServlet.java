@@ -105,6 +105,22 @@ public class FacilityServlet extends HttpServlet {
             case "update":
                 updateFacility(request,response);
                 break;
+                case "search":
+                showSearchFacility(request,response);
+                break;
+        }
+    }
+
+    private void showSearchFacility(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<Facility> facilityList = facilityService.searchByName(name);
+        request.setAttribute("facilityList",facilityList);
+        try {
+            request.getRequestDispatcher("furama/facility/list_facility.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

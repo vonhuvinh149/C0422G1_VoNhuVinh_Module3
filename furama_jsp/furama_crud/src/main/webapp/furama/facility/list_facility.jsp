@@ -12,24 +12,26 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="furama/furamacss/modaldelete.css">
+    <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="../../bootstrap-5.0.2-dist/DataTables/DataTables-1.12.1/css/dataTables.bootstrap5.min.css">
 </head>
 <body>
 <%@include file="/furama/include/header.jsp" %>
 <div class="container-fluid text-center shadow-sm p-3 bg-body rounded list_furama mt-3">
-    <div class="color">
-        <div class="row">
-            <h1>Danh sách dịch vụ</h1>
-        </div>
-        <div class="row">
-            <form action="/facility" method="post">
-                <input type="text" placeholder="tìm kiếm theo tên" name="name">
-                <button type="submit" name="action" value="search">search</button>
-            </form>
-        </div>
-        <div class="row">
-            <%--        bảng nhân viên --%>
-            <table class="table table-hover shadow-sm p-3 mt-5 bg-body rounded" id="table" style="width:100%;">
+    <div class="row">
+        <h1>Danh sách dịch vụ</h1>
+    </div>
+    <div class="row">
+        <form action="/facility" method="post">
+            <input type="text" placeholder="tìm kiếm theo tên" name="name">
+            <button type="submit" name="action" value="search">search</button>
+        </form>
+    </div>
+    <div class="row container mw-100">
+        <div class="">
+            <table class="table table-hover shadow-sm p-3 mt-5 bg-body rounded " id="table">
+                <thead>
                 <tr class="bg-primary">
                     <th>facilityId</th>
                     <td>facilityName</td>
@@ -43,44 +45,31 @@
                     <th>poolArea</th>
                     <th>numberOfFloor</th>
                     <th>facilityFree</th>
-                    <th colspan="2">Actions</th>
+                    <th>Actions</th>
+                    <th></th>
                 </tr>
+                </thead>
+                <tbody>
                 <c:forEach var="facility" items="${facilityList}">
                     <tr>
                         <td>${facility.facilityId}</td>
                         <td>${facility.facilityName}</td>
                         <td>${facility.facilityArea}</td>
                         <td>${facility.facilityCost}</td>
-                            <%--                        <c:if test="${customer.customerGender}">--%>
-                            <%--                            <td>Nam</td>--%>
-                            <%--                        </c:if>--%>
-                            <%--                        <c:if test="${!customer.customerGender}">--%>
-                            <%--                            <td>Nữ</td>--%>
-                            <%--                        </c:if>--%>
                         <td>${facility.facilityMaxPeople}</td>
-                            <%-------------------------------------%>
-                        <c:if test="${facility.rentTypeId == 1}">
-                            <td>year</td>
-                        </c:if>
-                        <c:if test="${facility.rentTypeId == 2}">
-                            <td>month</td>
-                        </c:if>
-                        <c:if test="${facility.rentTypeId == 3}">
-                            <td>day</td>
-                        </c:if>
-                        <c:if test="${facility.rentTypeId  == 4}">
-                            <td>house</td>
-                        </c:if>
+                        <c:forEach var="rentType" items="${rentTypeList}">
+                            <c:if test="${rentType.rentTypeId == facility.rentTypeId}">
+                                <td>${rentType.rentTypeName}</td>
+                            </c:if>
+                        </c:forEach>
+
+                        <c:forEach var="facilityType" items="${facilityListType}">
+                            <c:if test="${facilityType.facilityTypeID == facility.facilityTypeId}">
+                                <td>${facilityType.facilityTypeName}</td>
+                            </c:if>
+                        </c:forEach>
                             <%-- -----------------------------------------------%>
-                        <c:if test="${facility.facilityTypeId == 1}">
-                            <td>villa</td>
-                        </c:if>
-                        <c:if test="${facility.facilityTypeId == 2}">
-                            <td>house</td>
-                        </c:if>
-                        <c:if test="${facility.facilityTypeId == 3}">
-                            <td>room</td>
-                        </c:if>
+
                         <td>${facility.standardRoom}</td>
                         <td>${facility.description}</td>
                         <td>${facility.poolArea}</td>
@@ -90,19 +79,22 @@
                             <a class="btn btn-primary" href="/facility?action=update&facilityID=${facility.facilityId}">update</a>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" onclick="deleteFacility(${facility.facilityId})" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                            <button type="button" class="btn btn-danger mb-1"
+                                    onclick="deleteFacility(${facility.facilityId})" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal1">
                                 delete
                             </button>
                         </td>
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
-            <a href="/facility?action=create">thêm mới</a>
         </div>
     </div>
+    <a href="/facility?action=create" class="btn btn-success">thêm mới</a>
+</div>
 </div>
 <!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -123,14 +115,24 @@
     </div>
 </div>
 <%@include file="/furama/include/footer.jsp" %>
+<script src="../../jquery-3.6.0.min.js"></script>
+<script src="../../bootstrap-5.0.2-dist/DataTables/DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="../../bootstrap-5.0.2-dist/DataTables/DataTables-1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="../../bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
 <script>
-    function deleteFacility(id){
-        document.getElementById("confirmFacility").innerHTML = '<a class="text-white text-decoration-none" href="/facility?action=delete&facilityID='+id+'">xoa</a>'
+    function deleteFacility(id) {
+        document.getElementById("confirmFacility").innerHTML = '<a class="text-white text-decoration-none" href="/facility?action=delete&facilityID=' + id + '">xoa</a>'
     }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('#table').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5,
+        });
+    });
+</script>
 
 </body>
 

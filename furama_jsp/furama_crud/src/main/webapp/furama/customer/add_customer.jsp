@@ -14,7 +14,7 @@
 <body>
 <div class="row mt-5 d-flex justify-content-center " id="create">
     <div class="border border-dark p-5 w-75 shadow-sm p-3 mt-3 bg-body rounded overflow-hidden">
-        <h3>Thêm mới nhân viên</h3>
+        <h3>Thêm mới khách hàng</h3>
         <form action="/customer" method="post">
             <table>
                 <tr>
@@ -27,35 +27,41 @@
                 </tr>
                 <tr>
                     <td>Thêm tên khách hàng:</td>
-                    <td><input type="text" name="customerName"/></td>
+                    <td><input type="text" name="customerName" value="${customer.customerName}"/></td>
+                    <td ><span style="color: red">${nameErr}</span></td>
                 </tr>
                 <tr>
-                    <td>Thêm ngày sinh:</td>
-                    <td><input type="date" name="customerBirth"/></td>
+                    <td><span>Thêm ngày sinh:</span></td>
+                    <td><input type="date" name="customerBirth" value=""/></td>
+                    <td><span style="color: red">${birthdayErr}</span></td>
                 </tr>
                 <tr>
                     <td>Thêm giới tính:</td>
                     <td>
                         <select name="customerGender">
+                            <option value="none">Chọn giới tính</option>
                             <option value="true">Nam</option>
                             <option value="false">Nữ</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Thêm chứng minh nhân dân:</td>
+                    <td><span>Thêm chứng minh nhân dân:</span></td>
                     <td><input type="text" name="customerIdCard"/></td>
+                    <td ><span style="color: red">${idErr}</span></td>
                 </tr>
                 <tr>
-                    <td>Thêm số điện thoại:</td>
+                    <td><span>Thêm số điện thoại:</span></td>
                     <td><input type="text" name="customerPhone"/></td>
+                    <td><span style="color: red">${phoneErr}</span></td>
                 </tr>
                 <tr>
-                    <td>Thêm email:</td>
+                    <td><span>Thêm email:</span></td>
                     <td><input type="text" name="customerEmail"/></td>
+                    <td><span style="color:red">${emailErr}</span></td>
                 </tr>
                 <tr>
-                    <td>Thêm địa chỉ:</td>
+                    <td><span>Thêm địa chỉ:</span></td>
                     <td><input type="text" name="customerAddress"/></td>
                 </tr>
                 <tr>

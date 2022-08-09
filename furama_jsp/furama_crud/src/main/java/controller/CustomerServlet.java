@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", value = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -146,7 +147,21 @@ public class CustomerServlet extends HttpServlet {
         String customerEmail = request.getParameter("customerEmail");
         String customerAddress = request.getParameter("customerAddress");
         Customer customer = new Customer(customerTypeId, customerName, customerBirth, customerGender, customerIdCard, customerPhone, customerEmail, customerAddress);
-        service.addCustomer(customer);
-        showListCustomer(request, response);
+        Map<String,String> errMap = service.addCustomer(customer);
+       if (errMap.isEmpty()){
+           showListCustomer(request,response);
+       }else {
+           for (Map.Entry<String,String> entry: errMap.entrySet()){
+               request.setAttribute(entry.getKey(),entry.getValue());
+           }
+           try {
+               request.getRequestDispatcher("furama/customer/add_customer.jsp").forward(request,response);
+           } catch (ServletException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+
     }
 }

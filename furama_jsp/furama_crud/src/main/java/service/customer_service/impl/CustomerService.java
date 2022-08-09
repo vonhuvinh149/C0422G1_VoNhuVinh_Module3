@@ -27,12 +27,44 @@ public class CustomerService implements IService {
         return errMap;
     }
 
+
+
+    @Override
+    public void deleteCustomer(int id) {
+        repository.deleteCustomer(id);
+    }
+
+    @Override
+    public  Map<String ,String> updateCustomer(Customer customer) {
+        Map<String , String> errMap = this.validate(customer);
+        if (errMap.isEmpty()) {
+            repository.updateCustomer(customer);
+        }
+        return errMap;
+    }
+
+    @Override
+    public Customer findById(int id) {
+        return repository.findById(id);
+    }
+
+    @Override
+    public List<CustomerType> showCustomerType() {
+        return repository.showCustomerType();
+    }
+
+    @Override
+    public List<Customer> searchByName(String name) {
+        return repository.searchByName(name);
+    }
+
     private Map<String, String> validate(Customer customer) {
         Map<String,String> errMap = new HashMap<>();
         if (!customer.getCustomerName().isEmpty()){
             if (!customer.getCustomerName().matches("^([A-Z][a-z])+( [A-Z][a-z]+)*$")){
                 errMap.put("nameErr","Please input right format!");
             }
+
         }else {
             errMap.put("nameErr","Please input name");
         }
@@ -68,36 +100,6 @@ public class CustomerService implements IService {
         }else {
             errMap.put("birthdayErr","please input birthday");
         }
-
         return errMap;
-    }
-
-    @Override
-    public void deleteCustomer(int id) {
-        repository.deleteCustomer(id);
-    }
-
-    @Override
-    public  Map<String ,String> updateCustomer(Customer customer) {
-        Map<String , String> errMap = this.validate(customer);
-        if (errMap.isEmpty()) {
-            repository.updateCustomer(customer);
-        }
-        return errMap;
-    }
-
-    @Override
-    public Customer findById(int id) {
-        return repository.findById(id);
-    }
-
-    @Override
-    public List<CustomerType> showCustomerType() {
-        return repository.showCustomerType();
-    }
-
-    @Override
-    public List<Customer> searchByName(String name) {
-        return repository.searchByName(name);
     }
 }

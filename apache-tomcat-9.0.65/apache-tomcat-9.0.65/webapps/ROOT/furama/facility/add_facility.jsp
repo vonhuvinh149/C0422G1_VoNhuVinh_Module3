@@ -14,31 +14,31 @@
 <body>
 <div class="row mt-5 d-flex justify-content-center " id="create">
     <div class="border border-dark p-5 w-75 shadow-sm p-3 mt-3 bg-body rounded overflow-hidden">
-        <h3>Thêm mới nhân viên</h3>
+        <h3>Thêm mới dịch vụ</h3>
         <form action="/facility?action=create" method="post">
             <select onchange="clickFacility()" id="type_facility" name="facility_type">
-                <option value="none"></option>
+                <option value="none">chọn dịch vụ muốn thêm</option>
                 <option value="1">villa</option>
                 <option value="2">house</option>
                 <option value="3">room</option>
             </select>
             <table>
                 <tr>
-                    <td id="facilityName">Thêm tên dịch vụ:<input type="text"  name="facilityName"></td>
+                    <td id="facilityName">Thêm tên dịch vụ:<br><input type="text"  name="facilityName"></td>
                 </tr>
                 <tr>
-                    <td  id="facilityArea">Thêm diện tích:<input type="text" name="facilityArea"/></td>
+                    <td  id="facilityArea">Thêm diện tích:<br><input type="text" name="facilityArea"/></td>
                 </tr>
                 <tr>
-                    <td id="facilityCost">Thêm giá:<input type="text"  name="facilityCost"/></td>
+                    <td id="facilityCost">Thêm giá:<br><input type="text"  name="facilityCost"/></td>
                 </tr>
                 <tr>
-                    <td id="facilityMaxPeople">Thêm số người tối da:
+                    <td id="facilityMaxPeople">Thêm số người tối da:<br>
                         <input type="text"  name="facilityMaxPeople">
                     </td>
                 </tr>
                 <tr>
-                    <td id="rentTypeId">Thêm kiểu thuê:
+                    <td id="rentTypeId">Thêm kiểu thuê:<br>
                         <%--                                                <input type="text" name="rentTypeId"/>--%>
                         <select  name="rentTypeId">
                             <c:forEach var="rentType" items="${rentTypeList}">
@@ -49,7 +49,7 @@
                 </tr>
 
                 <tr>
-                    <td id="standardRoom">Thêm tiêu chuẩn phòng:<input type="text"  name="standardRoom"/></td>
+                    <td id="standardRoom">Thêm tiêu chuẩn phòng:<br><input type="text"  name="standardRoom"/></td>
                 </tr>
                 <tr>
                     <td id="description">Thêm mô tả phòng:<input type="text"  name="description"/></td>

@@ -72,7 +72,7 @@
                         </td>
                         <td>
                             <button type="button" onclick="deleteCustomer(${customer.customerId})"
-                                    class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    class="btn btn-danger mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 delete
                             </button>
                         </td>

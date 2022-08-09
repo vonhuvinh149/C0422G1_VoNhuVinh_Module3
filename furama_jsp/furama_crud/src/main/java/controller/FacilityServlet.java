@@ -43,7 +43,11 @@ public class FacilityServlet extends HttpServlet {
 
     private void showListFacility(HttpServletRequest request, HttpServletResponse response) {
         List<Facility> facilityList = facilityService.findAllFacility();
+        List<FacilityType> facilityListType = facilityService.showFacilityType();
+        List<RentType> rentTypeList = facilityService.showRentFacility();
         request.setAttribute("facilityList", facilityList);
+        request.setAttribute("facilityListType",facilityListType);
+        request.setAttribute("rentTypeList",rentTypeList);
         try {
             request.getRequestDispatcher("furama/facility/list_facility.jsp").forward(request, response);
         } catch (ServletException e) {

@@ -45,9 +45,9 @@
                     <a class="nav-link active text-black-500 " href="furama/contract/list_contract.jsp" tabindex="-1">Contract</a>
                 </li>
             </ul>
-            <form class="d-flex me-5">
+            <form class="d-flex me-5 ">
                 <input class="form-control me-2 " type="search" placeholder="Search..." aria-label="Search">
-                <button class="btn btn-outline-light mt-2" type="submit">Search</button>
+                <button class="btn btn-outline-light mt-2 modalSearch" type="submit">Search</button>
             </form>
         </div>
     </div>

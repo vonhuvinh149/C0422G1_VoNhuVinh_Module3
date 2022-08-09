@@ -37,7 +37,7 @@
     font-size: 30px;
 }
 
-#navbarSupportedContent form input,button{
+#navbarSupportedContent form input,.modalSearch{
     border: white;
     background: white;
     margin-top: 10px;
@@ -46,9 +46,9 @@
 
 }
 #navbarSupportedContent form input:focus{
-    width: 200px;
-    color: black;
 
+    color: black;
+    width: 300px;
 }
 
 
